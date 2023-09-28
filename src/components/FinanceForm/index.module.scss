@@ -1,0 +1,48 @@
+@media (max-width: 940px) {
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        width: 355px;
+        height: auto;
+        padding: 30px 21px;
+        margin: 40px 0 0 20px;
+        gap: 15px;
+
+        border: 1px solid var(--grey-2);
+
+    }
+
+    span {
+        margin-top: -15px;
+    }
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    width: 355px;
+    height: auto;
+    padding: 30px 21px;
+    margin: 40px 0px 0px 261px;
+    gap: 15px;
+
+    border: 1px solid var(--grey-2);
+
+}
+
+span {
+    margin-top: -15px;
+}
+
+input {
+    width: 314px;
+    height: 52.8px;
+    border-radius: 8px;
+    padding-left: 15px ;
+
+    border: none;
+}

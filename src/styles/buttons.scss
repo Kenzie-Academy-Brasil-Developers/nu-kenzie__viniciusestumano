@@ -3,6 +3,11 @@
     color: var(--grey-1);
     background-color: var(--color-primary);
 
+    width: 314.5px;
+    height: 48px;
+
+    border-radius: 8px;
+
     &:hover {
         background-color: var(--color-primary-2);
         color: var(--grey-1);

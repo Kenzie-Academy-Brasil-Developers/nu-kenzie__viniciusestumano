@@ -1,11 +1,14 @@
 
+import { FinanceForm } from "./components/FinanceForm"
+import { Header } from "./components/Header"
 import "./styles/index.scss"
 
 
 function App() {
   return (
     <>
-    <h2>olá pessoa</h2>
+    <Header />
+    <FinanceForm />
     </>
   )
 }
