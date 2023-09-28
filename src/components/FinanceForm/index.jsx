@@ -27,8 +27,8 @@ export const FinanceForm = () => {
 
             <label className="title4" htmlFor="">Tipo de valor</label>
             <select className="headline" name="Entrada" onChange={(e) => setEnterExit(e.target.value)}>
-                <option className="input__tipeValue" value="1">Entrada</option>
-                <option className="input__tipeValue" value="2">Saída</option>
+                <option value="1">Entrada</option>
+                <option value="2">Saída</option>
             </select>
 
             <button className="buttonInsertValue headline" type="submit">Inserir valor</button>
