@@ -1,0 +1,14 @@
+@media (max-width: 940px) {
+    .main__container {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+.main__container {
+    display: flex;
+    gap: 64px;
+    margin-bottom: 200px; 
+}
+

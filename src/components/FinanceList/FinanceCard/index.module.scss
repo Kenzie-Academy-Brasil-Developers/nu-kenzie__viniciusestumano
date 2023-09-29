@@ -1,0 +1,50 @@
+
+@media (max-width: 940px) {
+    .finance__cardContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    
+        width: 355px;
+        height: 156px;
+        padding: 0px 0px 15px 14px;
+        margin: 17px 20px;
+    
+        border-radius: 4px;
+        background-color: var(--grey-1);
+        border-left: 5px solid var(--color-secondary);
+
+        h2 {
+            margin-left: 0px;
+        }
+    
+        p {
+            margin: 6px 0px;
+        }
+    }
+
+}
+
+@media (min-width: 940px){
+    .finance__cardContainer {
+        display: flex;
+        flex-direction: column;
+    
+        width: 355px;
+        height: 156px;
+        padding: 8px 14px;
+    
+        border-radius: 4px;
+        background-color: var(--grey-1);
+        border-left: 5px solid var(--color-secondary);
+
+        margin-bottom: 20px;
+    
+        p{
+            margin: 6px 0px;
+        }
+    }
+}
+
+
+

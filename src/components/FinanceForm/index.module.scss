@@ -1,6 +1,6 @@
 @media (max-width: 940px) {
 
-    form {
+    .form__container {
         display: flex;
         flex-direction: column;
 
@@ -17,40 +17,94 @@
     span {
         margin-top: -15px;
     }
+
+    input, select {
+        
+        width: 314px;
+        height: 52.8px;
+        border-radius: 8px;
+        padding-left: 15px ;
+    
+        border: none;
+        background-color: var(--grey-1);
+    }
+
+    .totalValue {
+        color: var(--color-primary);
+    }
+    
+    .formValueTotal__container {
+        display: flex;
+        flex-direction: column;     
+    }
+
+    h2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 355px;
+        height: 96px;
+        margin: 10px 20px;
+    }
+
+    .article__info > span { 
+        display: flex;
+        margin-left:20px;
+    }
     
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-
-    width: 355px;
-    height: auto;
-    padding: 30px 21px;
-    // margin: 40px 0px 0px 261px;
-    gap: 15px;
-
-    border: 1px solid var(--grey-2);
-
-}
-
-span {
-    margin-top: -15px;
-}
-
-input, select{
+@media (min-width: 930px) {
+    .form__container {
+        display: flex;
+        flex-direction: column;
     
-    width: 314px;
-    height: 52.8px;
-    border-radius: 8px;
-    padding-left: 15px ;
-
-    border: none;
-}
-
-.input__tipeValue {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
-    border: 1px solid blue;
+        width: 355px;
+        height: auto;
+        padding: 30px 21px;
+        margin: 40px 0px 0px 0px;
+        gap: 15px;
+    
+        border: 1px solid var(--grey-2);
+    
+    }
+    
+    span {
+        margin-top: -15px;
+    }
+    
+    input, select {
+        
+        width: 314px;
+        height: 52.8px;
+        border-radius: 8px;
+        padding-left: 15px ;
+    
+        border: none;
+        background-color: var(--grey-1);
+    }
+    
+    .totalValue {
+        color: var(--color-primary);
+    }
+    
+    .formValueTotal__container {
+        display: flex;
+        flex-direction: column; 
+        margin: 40px 0px 0px 130px;   
+    }
+    
+    
+    h2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 355px;
+        height: 96px;
+        
+    }
+    .article__info > span { 
+        display: flex;
+        
+    }
 }
