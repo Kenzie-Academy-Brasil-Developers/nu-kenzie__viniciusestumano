@@ -12,7 +12,14 @@
     
         border-radius: 4px;
         background-color: var(--grey-1);
-        border-left: 5px solid var(--color-secondary);
+
+        &.green__color {
+            border-left: 5px solid var(--color-secondary);
+        }
+
+        &.grey__color {
+            border-left: 5px solid var(--grey-2);
+        }
 
         h2 {
             margin-left: 0px;
@@ -36,7 +43,14 @@
     
         border-radius: 4px;
         background-color: var(--grey-1);
-        border-left: 5px solid var(--color-secondary);
+
+        &.green__color {
+            border-left: 5px solid var(--color-secondary);
+        }
+
+        &.grey__color {
+            border-left: 5px solid var(--grey-2);
+        }
 
         margin-bottom: 20px;
     

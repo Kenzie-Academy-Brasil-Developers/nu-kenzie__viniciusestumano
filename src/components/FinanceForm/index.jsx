@@ -39,7 +39,7 @@ export const FinanceForm = ({addInfo}) => {
             </form>
 
             <article className={style.article__info}>
-                <h2 className="title2">Valor total: <span className={style.totalValue}>RS 8184,00</span></h2>
+                <h2 className="title2">Valor total: <span className={style.totalValue}>R$ 8184,00</span></h2>
                 <span className="headline">O valor se refere ao saldo</span>
             </article>
         </div>
