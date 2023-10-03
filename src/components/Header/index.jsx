@@ -1,4 +1,4 @@
-import style from "./style.module.scss"
+import style from "./style.module.scss";
 export const Header = () => {
     return (
         <header className="header__container">

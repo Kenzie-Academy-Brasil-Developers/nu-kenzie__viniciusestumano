@@ -2,7 +2,7 @@ import { FinanceCard } from "./FinanceCard";
 import style from "./index.module.scss";
 
 
-export const FinanceList = ({ listForm, id, removeInfo }) => {
+export const FinanceList = ({ listForm, removeInfo }) => {
     return (
         <section className={style.list__container}>
             <h2 className="title3">Resumo financeiro</h2>

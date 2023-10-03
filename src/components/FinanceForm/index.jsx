@@ -6,6 +6,7 @@ export const FinanceForm = ({ addInfo }) => {
     const [title, setTitle] = useState("");
     const [value, setValue] = useState("");
     const [enterExit, setEnterExit] = useState("");
+    const [currentValue, setCurrentValue] = useState(8184);
 
     const submit = (e) => {
         e.preventDefault();
@@ -13,6 +14,13 @@ export const FinanceForm = ({ addInfo }) => {
         if (title.trim() !== "" && value.trim() !== "" && enterExit.trim() !== "") {
 
             addInfo(title, value, enterExit);
+
+            if (enterExit === "Entrada") {
+                setCurrentValue(currentValue + parseFloat(value));
+              } else if (enterExit === "Despesa") {
+                setCurrentValue(currentValue - parseFloat(value));
+              }
+
             setTitle("");
             setValue("");
             setEnterExit("Entrada");
@@ -20,6 +28,8 @@ export const FinanceForm = ({ addInfo }) => {
         }
         
     }
+
+    const initialValue = 8184;
 
 
     return (
@@ -44,7 +54,7 @@ export const FinanceForm = ({ addInfo }) => {
             </form>
 
             <article className={style.article__info}>
-                <h2 className="title2">Valor total: <span className={style.totalValue}>R$ 8184,00</span></h2>
+                <h2 className="title2">Valor total: <span className={style.totalValue}>R$ {currentValue.toFixed(2)}</span></h2>
                 <span className="headline">O valor se refere ao saldo</span>
             </article>
         </div>
