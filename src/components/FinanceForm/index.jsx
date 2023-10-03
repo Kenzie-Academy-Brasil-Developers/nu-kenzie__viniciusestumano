@@ -2,31 +2,34 @@ import { useState } from "react";
 import style from "./index.module.scss";
 
 
-export const FinanceForm = ({addInfo}) => {
+export const FinanceForm = ({ addInfo }) => {
     const [title, setTitle] = useState("");
     const [value, setValue] = useState("");
     const [enterExit, setEnterExit] = useState("");
 
     const submit = (e) => {
         e.preventDefault();
-        addInfo(title, value, enterExit);
 
-        setTitle("");
-        setValue("");
-        setEnterExit("Entrada");
+        if (title.trim() !== "" && value.trim() !== "" && enterExit.trim() !== "") {
+            addInfo(title, value, enterExit);
+            setTitle("");
+            setValue("");
+            setEnterExit("Entrada");
+        }
+
     }
-    
+
 
     return (
         <div className={style.formValueTotal__container}>
             <form className={style.form__container} onSubmit={submit}>
 
                 <label className="title4" htmlFor="">Descrição</label>
-                <input className="headline" type="text" placeholder="Digite  aqui sua descrição" onChange={(e) => setTitle(e.target.value)}/>
+                <input className="headline" type="text" placeholder="Digite  aqui sua descrição" onChange={(e) => setTitle(e.target.value)} />
                 <span className="headline">Ex: compra de roupas</span>
 
                 <label className="title4" htmlFor="">Valor (R$)</label>
-                <input className="headline" type="text" placeholder="1" onChange={(e) => setValue(e.target.value)}/>
+                <input className="headline" type="text" placeholder="1" onChange={(e) => setValue(e.target.value)} />
 
                 <label className="title4" htmlFor="">Tipo de valor</label>
                 <select className="headline" name="Entrada" onChange={(e) => setEnterExit(e.target.value)}>
@@ -43,6 +46,6 @@ export const FinanceForm = ({addInfo}) => {
                 <span className="headline">O valor se refere ao saldo</span>
             </article>
         </div>
-        
+
     )
 };
