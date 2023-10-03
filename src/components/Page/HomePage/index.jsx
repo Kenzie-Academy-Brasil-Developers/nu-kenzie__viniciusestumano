@@ -1,7 +1,7 @@
-import { Header } from "../../Header"
-import { FinanceForm } from "../../FinanceForm"
-import { FinanceList } from "../../FinanceList"
-import style from "./index.module.scss"
+import { Header } from "../../Header";
+import { FinanceForm } from "../../FinanceForm";
+import { FinanceList } from "../../FinanceList";
+import style from "./index.module.scss";
 
 export const HomePage = ({listForm, addInfo, removeInfo}) => {
 

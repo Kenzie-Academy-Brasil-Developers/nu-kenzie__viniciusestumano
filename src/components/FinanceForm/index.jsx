@@ -11,12 +11,14 @@ export const FinanceForm = ({ addInfo }) => {
         e.preventDefault();
 
         if (title.trim() !== "" && value.trim() !== "" && enterExit.trim() !== "") {
+
             addInfo(title, value, enterExit);
             setTitle("");
             setValue("");
             setEnterExit("Entrada");
-        }
 
+        }
+        
     }
 
 

@@ -1,5 +1,5 @@
-import { FinanceCard } from "./FinanceCard"
-import style from "./index.module.scss"
+import { FinanceCard } from "./FinanceCard";
+import style from "./index.module.scss";
 
 
 export const FinanceList = ({ listForm, id, removeInfo }) => {
@@ -9,7 +9,7 @@ export const FinanceList = ({ listForm, id, removeInfo }) => {
             {listForm.length > 0 ? (
             <ul>
                 {listForm.map((info) => {
-                    const {title, value, enterExit} = info;
+                    const {title, value, enterExit, id} = info;
                     return <FinanceCard key={id} id={id} title={title} enterExit={enterExit} value={value} removeInfo={removeInfo} />                   
                 })}
             </ul>
