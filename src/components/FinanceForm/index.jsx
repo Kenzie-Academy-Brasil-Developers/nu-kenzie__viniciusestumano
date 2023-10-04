@@ -1,35 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./index.module.scss";
-
 
 export const FinanceForm = ({ addInfo }) => {
     const [title, setTitle] = useState("");
     const [value, setValue] = useState("");
-    const [enterExit, setEnterExit] = useState("");
+    const [enterExit, setEnterExit] = useState("Entrada");
     const [currentValue, setCurrentValue] = useState(8184);
+    const [displayedValue, setDisplayedValue] = useState(currentValue);
 
     const submit = (e) => {
         e.preventDefault();
 
         if (title.trim() !== "" && value.trim() !== "" && enterExit.trim() !== "") {
-
             addInfo(title, value, enterExit);
 
             if (enterExit === "Entrada") {
                 setCurrentValue(currentValue + parseFloat(value));
-              } else if (enterExit === "Despesa") {
+            } else if (enterExit === "Despesa") {
                 setCurrentValue(currentValue - parseFloat(value));
-              }
+            }
 
             setTitle("");
             setValue("");
-            setEnterExit("Entrada");
-
         }
-        
     }
 
-    const initialValue = 8184;
+    useEffect(() => {
+        setDisplayedValue(currentValue);
+    }, [currentValue]);
 
 
     return (
@@ -41,10 +39,10 @@ export const FinanceForm = ({ addInfo }) => {
                 <span className="headline">Ex: compra de roupas</span>
 
                 <label className="title4" htmlFor="">Valor (R$)</label>
-                <input className="headline" type="text" placeholder="1" onChange={(e) => setValue(e.target.value)} />
+                <input className="headline" type="number" placeholder="1" onChange={(e) => setValue(e.target.value)} />
 
                 <label className="title4" htmlFor="">Tipo de valor</label>
-                <select className="headline" name="Entrada" onChange={(e) => setEnterExit(e.target.value)}>
+                <select className="headline" onChange={(e) => setEnterExit(e.target.value)}>
                     <option value="Entrada">Entrada</option>
                     <option value="Despesa">Despesa</option>
                 </select>
@@ -54,7 +52,7 @@ export const FinanceForm = ({ addInfo }) => {
             </form>
 
             <article className={style.article__info}>
-                <h2 className="title2">Valor total: <span className={style.totalValue}>R$ {currentValue.toFixed(2)}</span></h2>
+                <h2 className="title2">Valor total: <span className={style.totalValue}>R$ {displayedValue.toFixed(2)}</span></h2>
                 <span className="headline">O valor se refere ao saldo</span>
             </article>
         </div>
