@@ -7,12 +7,23 @@ export const FinanceForm = ({ addInfo }) => {
     const [enterExit, setEnterExit] = useState("Entrada");
     const [currentValue, setCurrentValue] = useState(8184);
     const [displayedValue, setDisplayedValue] = useState(currentValue);
+    const [transactions, setTransactions] = useState([]);
 
     const submit = (e) => {
         e.preventDefault();
 
         if (title.trim() !== "" && value.trim() !== "" && enterExit.trim() !== "") {
             addInfo(title, value, enterExit);
+            const existingTransaction = transactions.find((transaction) => transaction.title === title);
+    
+            if (!existingTransaction) {
+            const newTransaction = {
+                title,
+                value: parseFloat(value),
+                enterExit,
+            };
+
+            setTransactions([...transactions, newTransaction]);
 
             if (enterExit === "Entrada") {
                 setCurrentValue(currentValue + parseFloat(value));
@@ -22,12 +33,24 @@ export const FinanceForm = ({ addInfo }) => {
 
             setTitle("");
             setValue("");
+        } else {
+            alert ("Já existe uma transação com o mesmo título");
         }
+      }
     }
 
     useEffect(() => {
-        setDisplayedValue(currentValue);
-    }, [currentValue]);
+        const totalValue = transactions.reduce((total, transaction) => {
+          if (transaction.enterExit === "Entrada") {
+            return total + transaction.value;
+          } else if (transaction.enterExit === "Despesa") {
+            return total - transaction.value;
+          }
+          return total;
+        }, 0);
+    
+        setDisplayedValue(totalValue);
+      }, [transactions]);
 
 
     return (
@@ -51,10 +74,14 @@ export const FinanceForm = ({ addInfo }) => {
 
             </form>
 
-            <article className={style.article__info}>
-                <h2 className="title2">Valor total: <span className={style.totalValue}>R$ {displayedValue.toFixed(2)}</span></h2>
-                <span className="headline">O valor se refere ao saldo</span>
-            </article>
+            {transactions.length > 0 && (
+                <article className={style.article__info}>
+                    <h2 className="title2">
+                        Valor total: <span className={style.totalValue}>R$ {displayedValue.toFixed(2)}</span>
+                    </h2>
+                    <span className="headline">O valor se refere ao saldo</span>
+                </article>
+            )}
         </div>
 
     )
